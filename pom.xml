@@ -33,8 +33,8 @@
 				<configuration>
 					<cloudHubDeployment>
 						<muleVersion>4.5.3</muleVersion>
-						<username>Angelo_araujo</username>
-						<password>GlobalMule69</password>
+						<username>$Angelo_araujo</username>
+						<password>$GlobalMule69</password>
 						<applicationName>manager-jira-api</applicationName>
 						<environment>Sandbox</environment>
 						<region>us-east-2</region>
