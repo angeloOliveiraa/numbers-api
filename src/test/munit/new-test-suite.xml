@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="new-test-suite.xml" />
+	<munit:test name="new-test-suite-get:\issue:jira-connection-configTest" doc:id="36abc16f-b1d6-438a-8d1c-b9234c2d323a" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\issue:jira-connection-config" doc:id="a4ba5bae-827d-41e2-8204-2671877b69a3" name="get:\issue:jira-connection-config"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="new-test-suite-post:\issue:jira-connection-configTest" doc:id="a4cc8548-61f1-4b09-ad03-80e37b21eee2" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\issue:jira-connection-config" doc:id="386ba4a0-93a9-4a3d-92cb-1b7dd55cf3e9" name="post:\issue:jira-connection-config"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="new-test-suite-delete:\issue\(id):jira-connection-configTest" doc:id="acea4e2a-ccf7-41f5-a771-41a1fc0e6358" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to delete:\issue\(id):jira-connection-config" doc:id="aa910e2d-088a-4a45-8ff7-9d7158010753" name="delete:\issue\(id):jira-connection-config"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="new-test-suite-put:\issue\(id):application\json:jira-connection-configTest" doc:id="96943d04-ab31-4387-b605-fc2ba96dba4a" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to put:\issue\(id):application\json:jira-connection-config" doc:id="1b23977d-45ad-4b96-a243-ed03ff1bcc3c" name="put:\issue\(id):application\json:jira-connection-config"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="new-test-suite-get:\issue\(id):jira-connection-configTest" doc:id="a254c5ed-f4b2-4b9b-9088-23ab39239020" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\issue\(id):jira-connection-config" doc:id="c63754bb-70ff-41b5-bd9a-3b994f6a630b" name="get:\issue\(id):jira-connection-config"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="new-test-suite-jira-connection-mainTest" doc:id="a7c95ea2-7ac9-4e43-bcc0-fc71e5e98282" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to jira-connection-main" doc:id="4d4a3e77-8db3-473e-aace-695842230c4b" name="jira-connection-main"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="new-test-suite-jira-connection-consoleTest" doc:id="431e5e54-42c3-4869-8375-3a3c2a48bba4" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to jira-connection-console" doc:id="462b9c5e-5e91-45f0-87f9-f5a3415223ae" name="jira-connection-console"/>
+		</munit:execution>
+	</munit:test>
+
+
+</mule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jira="http://www.mulesoft.org/schema/mule/jira" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/jira http://www.mulesoft.org/schema/mule/jira/current/mule-jira.xsd">
+	<flow name="get:\issue:jira-connection-config" doc:id="117773f2-f5ce-4ebe-bc2d-5c38fe8181e4" >
+		<logger level="INFO" doc:name="Logger" doc:id="bf62a0e5-342a-4e0b-8a80-ec33156e8596" message="#[payload]" category="init"/>
+		<ee:cache doc:name="Cache" doc:id="632b2b15-db32-43ce-808c-7272fc311318" >
+			<jira:get-rest-api3-project-by-project-id-or-key doc:name="Get Project" doc:id="d9be1566-2e9a-4736-92e5-2f0ecefe00e3" config-ref="Jira_Connector_Config" projectIdOrKey="#[attributes.queryParams.'projectId']" />
+			<ee:transform doc:name="Transform Message" doc:id="1fc4d45d-1a28-4ea9-b890-fefafe0c1d6a">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		</ee:cache>
+		<logger level="INFO" doc:name="Logger" doc:id="9c33fa2a-a614-45b4-b3a4-7825ababb8b2" message="#[payload]" category="end"/>
+	</flow>
+</mule>

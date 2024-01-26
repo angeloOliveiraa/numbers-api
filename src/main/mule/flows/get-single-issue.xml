@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jira="http://www.mulesoft.org/schema/mule/jira" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/jira http://www.mulesoft.org/schema/mule/jira/current/mule-jira.xsd">
+	<flow name="get:\issue\(id):jira-connection-config" doc:id="fff974f0-6ba2-484c-b8be-992769d84881" >
+		<logger level="INFO" doc:name="Logger" doc:id="dcb51958-50fe-460c-aed8-6a831e2d07d0" message="#[payload]" category="init"/>
+		<jira:get-rest-api3-issue-by-issue-id-or-key doc:name="Get Issue" doc:id="0e21fdaf-8267-4e8c-8358-02949642d551" config-ref="Jira_Connector_Config" issueIdOrKey="#[attributes.uriParams.'id']" />
+		<logger level="INFO" doc:name="Logger" doc:id="bdc53d98-0b71-40da-8293-616d8ba8d629" message="#[payload]" category="end"/>
+	</flow>
+</mule>
